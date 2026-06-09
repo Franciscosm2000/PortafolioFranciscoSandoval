@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Francisco Sandoval | Senior .NET Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0b1220;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at top left, #2563eb33, transparent 35%),
+    radial-gradient(circle at bottom right, #0ea5e933, transparent 35%);
+  padding: 40px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.hero h2 {
+  color: #60a5fa;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.hero p {
+  max-width: 750px;
+  margin: 20px auto;
+  color: #cbd5e1;
+}
+
+.buttons {
+  margin-top: 25px;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 5px;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-secondary {
+  border: 1px solid #334155;
+  color: white;
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2.section-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #60a5fa;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  padding: 22px;
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #3b82f6;
+}
+
+.card h3 {
+  color: #93c5fd;
+  margin-bottom: 10px;
+}
+
+/* TAGS */
+.tags {
+  margin-top: 10px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 4px 2px;
+  background: #1e293b;
+  border-radius: 999px;
+  font-size: 12px;
+  color: #93c5fd;
+}
+
+/* TIMELINE */
+.timeline {
+  border-left: 2px solid #334155;
+  padding-left: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 25px;
+  padding-left: 10px;
+}
+
+.timeline-item h4 {
+  color: #60a5fa;
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+.stat {
+  background: #111827;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.stat h3 {
+  color: #3b82f6;
+  font-size: 2rem;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid #1f2937;
+  color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Francisco Sandoval</h1>
+    <h2>Senior .NET Engineer | Arquitectura de Sistemas | Integración ERP | IA</h2>
+    <p>
+      Ingeniero especializado en arquitectura backend, integración de sistemas empresariales,
+      optimización de SQL Server y construcción de plataformas basadas en APIs, Workers y Agentes de IA en producción.
+    </p>
+
+    <div class="buttons">
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/francisco-sandoval-maldonado/">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<section>
+  <h2 class="section-title">Impacto Profesional</h2>
+
+  <div class="stats">
+    <div class="stat">
+      <h3>5+</h3>
+      <p>Años de experiencia</p>
+    </div>
+
+    <div class="stat">
+      <h3>30M+</h3>
+      <p>Registros procesados en SQL</p>
+    </div>
+
+    <div class="stat">
+      <h3>30min → 2min</h3>
+      <p>Optimización de procesos críticos</p>
+    </div>
+
+    <div class="stat">
+      <h3>20+</h3>
+      <p>Integraciones empresariales</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section>
+  <h2 class="section-title">Stack Tecnológico</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Backend</h3>
+      <div class="tags">
+        <span class="tag">.NET 8</span>
+        <span class="tag">ASP.NET Core</span>
+        <span class="tag">Worker Services</span>
+        <span class="tag">APIs REST</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Data</h3>
+      <div class="tags">
+        <span class="tag">SQL Server</span>
+        <span class="tag">Dapper</span>
+        <span class="tag">ETL</span>
+        <span class="tag">Performance Tuning</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Arquitectura</h3>
+      <div class="tags">
+        <span class="tag">Microservicios</span>
+        <span class="tag">YARP</span>
+        <span class="tag">Ocelot</span>
+        <span class="tag">API Gateway</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>IA & DevOps</h3>
+      <div class="tags">
+        <span class="tag">OpenAI</span>
+        <span class="tag">CI/CD</span>
+        <span class="tag">Azure DevOps</span>
+        <span class="tag">NuGet Artifacts</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+  <h2 class="section-title">Experiencia y Arquitectura</h2>
+
+  <div class="card">
+    <h3>XSales (ERP + SFA Integration)</h3>
+    <p>
+      Diseño de la capa de integración entre ERP y SFA, coordinación de despliegues,
+      pruebas con negocio y estabilización de procesos críticos.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Modernización de Sistemas Legacy</h3>
+    <p>
+      Migración de sistemas con acceso directo a BD hacia arquitectura basada en APIs,
+      Worker Services y separación de responsabilidades.
+    </p>
+  </div>
+</section>
+
+<!-- OPTIMIZATION -->
+<section>
+  <h2 class="section-title">Optimización de Alto Rendimiento</h2>
+
+  <div class="card">
+    <h3>Performance Tuning en SQL Server</h3>
+    <p>
+      He optimizado procedimientos almacenados críticos con tiempos de ejecución superiores a 30 minutos,
+      aplicando técnicas avanzadas de análisis y rediseño de consultas.
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Análisis de Plan de Ejecución</h3>
+      <p>
+        Revisión detallada de Execution Plans para identificar cuellos de botella,
+        scans innecesarios, key lookups y operaciones costosas, ajustando índices y estructuras de consulta.
+      </p>
+      <div class="tags">
+        <span class="tag">Execution Plan</span>
+        <span class="tag">Query Optimization</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Reescritura de Consultas</h3>
+      <p>
+        Reestructuración de consultas complejas utilizando CTE (WITH SELECT),
+        sustituyendo cursores y ciclos por operaciones basadas en conjuntos (set-based operations).
+      </p>
+      <div class="tags">
+        <span class="tag">CTE (WITH)</span>
+        <span class="tag">Set-Based Queries</span>
+        <span class="tag">JOIN Optimization</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Optimización Física de BD</h3>
+      <p>
+        Implementación de índices estratégicos, optimización de joins y uso de tablas temporales (#temp tables)
+        para segmentar y reducir la carga de procesamiento en consultas de alto volumen.
+      </p>
+      <div class="tags">
+        <span class="tag">Indexes</span>
+        <span class="tag">#Temp Tables</span>
+        <span class="tag">SQL Server Internals</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Agente de Inteligencia Artificial (Mesa de Servicio)</h2>
+
+  <div class="card">
+    <h3>Plataforma de Automatización y Orquestación Empresarial</h3>
+
+    <p>
+      Desarrollo de un agente de inteligencia artificial en producción orientado a mesa de servicio,
+      diseñado para interpretar lenguaje natural y ejecutar operaciones operativas entre sistemas empresariales.
+    </p>
+
+    <p>
+      El sistema convierte solicitudes de usuarios en acciones estructuradas, orquestando llamadas a APIs,
+      consultas a bases de datos y validaciones de estado en sistemas críticos.
+    </p>
+
+    <div class="tags">
+      <span class="tag">OpenAI</span>
+      <span class="tag">Service Desk</span>
+      <span class="tag">Orquestación</span>
+      <span class="tag">Producción</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Características Clave</h3>
+    <ul>
+      <li>Interpretación de lenguaje natural (NLP con OpenAI)</li>
+      <li>Orquestación de múltiples sistemas empresariales</li>
+      <li>Ejecución controlada con validaciones y confirmación del usuario</li>
+      <li>Integración con ERP, APIs internas y servicios Windows</li>
+      <li>Operación en entorno productivo con monitoreo continuo</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+  <h2 class="section-title">Trayectoria Profesional</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h4>Café Soluble S.A. (Actual)</h4>
+      <p>Arquitectura de sistemas, integración ERP, APIs y liderazgo técnico.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h4>JuegaOK S.A.</h4>
+      <p>Desarrollo .NET, optimización SQL Server y APIs empresariales.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h4>Emprovisa S.A.</h4>
+      <p>Desarrollo de sistemas empresariales y migración de tecnologías.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Francisco Sandoval | Senior .NET Engineer</p>
+  <p>Managua, Nicaragua</p>
+</footer>
+
+</body>
+</html>
