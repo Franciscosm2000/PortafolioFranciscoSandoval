@@ -1,408 +1,399 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Francisco Sandoval | Senior .NET Engineer</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Inter',sans-serif;
+background:#0b1220;
+color:#e5e7eb;
+line-height:1.6
 }
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: #0b1220;
-  color: #e5e7eb;
-  line-height: 1.6;
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px;
+background:
+radial-gradient(circle at top left,#2563eb33,transparent 35%),
+radial-gradient(circle at bottom right,#0ea5e933,transparent 35%)
 }
-
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background:
-    radial-gradient(circle at top left, #2563eb33, transparent 35%),
-    radial-gradient(circle at bottom right, #0ea5e933, transparent 35%);
-  padding: 40px;
+.hero h1{font-size:4rem;font-weight:700}
+.hero h2{color:#60a5fa;margin-top:10px}
+.hero p{max-width:850px;margin:25px auto;color:#cbd5e1}
+.btn{
+display:inline-block;
+padding:12px 22px;
+border-radius:10px;
+text-decoration:none;
+margin-top:20px;
+background:#2563eb;
+color:white
 }
-
-.hero h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  letter-spacing: -1px;
+section{
+max-width:1200px;
+margin:auto;
+padding:80px 20px
 }
-
-.hero h2 {
-  color: #60a5fa;
-  font-weight: 500;
-  margin-top: 10px;
+.section-title{
+text-align:center;
+font-size:2rem;
+margin-bottom:40px;
+color:#60a5fa
 }
-
-.hero p {
-  max-width: 750px;
-  margin: 20px auto;
-  color: #cbd5e1;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px
 }
-
-.buttons {
-  margin-top: 25px;
+.card,.stat{
+background:rgba(30,41,59,.65);
+border:1px solid rgba(255,255,255,.08);
+padding:24px;
+border-radius:16px;
+backdrop-filter:blur(10px)
 }
-
-.btn {
-  padding: 12px 22px;
-  border-radius: 10px;
-  text-decoration: none;
-  margin: 5px;
-  display: inline-block;
+.card h3{color:#93c5fd;margin-bottom:12px}
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px
 }
-
-.btn-primary {
-  background: #2563eb;
-  color: white;
+.stat{text-align:center}
+.stat h3{
+color:#3b82f6;
+font-size:1.8rem;
+margin-bottom:10px
 }
-
-.btn-secondary {
-  border: 1px solid #334155;
-  color: white;
+.tag{
+display:inline-block;
+padding:6px 12px;
+border-radius:999px;
+background:#1e293b;
+margin:4px;
+font-size:.8rem;
+color:#93c5fd
 }
-
-/* SECTIONS */
-section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: auto;
+.timeline{
+border-left:2px solid #334155;
+padding-left:20px
 }
-
-h2.section-title {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  text-align: center;
-  color: #60a5fa;
+.timeline-item{
+margin-bottom:25px
 }
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+.timeline-item h4{color:#60a5fa}
+ul{padding-left:20px}
+footer{
+text-align:center;
+padding:40px;
+border-top:1px solid #1f2937;
+color:#94a3b8
 }
-
-/* CARD */
-.card {
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(148, 163, 184, 0.1);
-  padding: 22px;
-  border-radius: 14px;
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  border-color: #3b82f6;
-}
-
-.card h3 {
-  color: #93c5fd;
-  margin-bottom: 10px;
-}
-
-/* TAGS */
-.tags {
-  margin-top: 10px;
-}
-
-.tag {
-  display: inline-block;
-  padding: 5px 10px;
-  margin: 4px 2px;
-  background: #1e293b;
-  border-radius: 999px;
-  font-size: 12px;
-  color: #93c5fd;
-}
-
-/* TIMELINE */
-.timeline {
-  border-left: 2px solid #334155;
-  padding-left: 20px;
-}
-
-.timeline-item {
-  margin-bottom: 25px;
-  padding-left: 10px;
-}
-
-.timeline-item h4 {
-  color: #60a5fa;
-}
-
-/* STATS */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  text-align: center;
-}
-
-.stat {
-  background: #111827;
-  padding: 25px;
-  border-radius: 14px;
-}
-
-.stat h3 {
-  color: #3b82f6;
-  font-size: 2rem;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 40px;
-  border-top: 1px solid #1f2937;
-  color: #94a3b8;
+@media(max-width:768px){
+.hero h1{font-size:2.7rem}
+.hero h2{font-size:1.1rem}
 }
 </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div>
-    <h1>Francisco Sandoval</h1>
-    <h2>Senior .NET Engineer | Arquitectura de Sistemas | Integración ERP | IA</h2>
-    <p>
-      Ingeniero especializado en arquitectura backend, integración de sistemas empresariales,
-      optimización de SQL Server y construcción de plataformas basadas en APIs, Workers y Agentes de IA en producción.
-    </p>
+<section class="hero">
+<div>
+<h1>Francisco Sandoval</h1>
+<h2>Senior .NET Engineer | Arquitectura de Sistemas | Integración ERP | IA</h2>
 
-    <div class="buttons">
-      <a class="btn btn-primary" href="https://www.linkedin.com/in/francisco-sandoval-maldonado/">LinkedIn</a>
-    </div>
-  </div>
+<p>
+Ingeniero en Sistemas con más de 5 años de experiencia en desarrollo de aplicaciones web,
+integración de sistemas empresariales y optimización de procesos. Especialista en .NET,
+Vue.js, SQL Server y DevOps, con experiencia en diseño de APIs, modernización de sistemas
+legacy e integración con ERP. Participación en liderazgo técnico, coordinación con áreas
+de negocio y construcción de soluciones escalables orientadas al impacto empresarial.
+</p>
+
+<a class="btn" href="https://www.linkedin.com/in/francisco-sandoval-maldonado/" target="_blank">
+LinkedIn
+</a>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Resultados Destacados</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h3>ERP + SFA</h3>
+<p>Integraciones críticas para procesos comerciales y operativos.</p>
 </div>
 
-<!-- STATS -->
-<section>
-  <h2 class="section-title">Impacto Profesional</h2>
+<div class="stat">
+<h3>SQL Server</h3>
+<p>Optimización avanzada mediante execution plans, índices y performance tuning.</p>
+</div>
 
-  <div class="stats">
-    <div class="stat">
-      <h3>5+</h3>
-      <p>Años de experiencia</p>
-    </div>
+<div class="stat">
+<h3>APIs & Workers</h3>
+<p>Automatización y sincronización de procesos empresariales.</p>
+</div>
 
-    <div class="stat">
-      <h3>30M+</h3>
-      <p>Registros procesados en SQL</p>
-    </div>
+<div class="stat">
+<h3>IA Productiva</h3>
+<p>Agente inteligente operando sobre procesos reales de negocio.</p>
+</div>
 
-    <div class="stat">
-      <h3>30min → 2min</h3>
-      <p>Optimización de procesos críticos</p>
-    </div>
-
-    <div class="stat">
-      <h3>20+</h3>
-      <p>Integraciones empresariales</p>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section>
-  <h2 class="section-title">Stack Tecnológico</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Backend</h3>
-      <div class="tags">
-        <span class="tag">.NET 8</span>
-        <span class="tag">ASP.NET Core</span>
-        <span class="tag">Worker Services</span>
-        <span class="tag">APIs REST</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Data</h3>
-      <div class="tags">
-        <span class="tag">SQL Server</span>
-        <span class="tag">Dapper</span>
-        <span class="tag">ETL</span>
-        <span class="tag">Performance Tuning</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Arquitectura</h3>
-      <div class="tags">
-        <span class="tag">Microservicios</span>
-        <span class="tag">YARP</span>
-        <span class="tag">Ocelot</span>
-        <span class="tag">API Gateway</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>IA & DevOps</h3>
-      <div class="tags">
-        <span class="tag">OpenAI</span>
-        <span class="tag">CI/CD</span>
-        <span class="tag">Azure DevOps</span>
-        <span class="tag">NuGet Artifacts</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section>
-  <h2 class="section-title">Experiencia y Arquitectura</h2>
-
-  <div class="card">
-    <h3>XSales (ERP + SFA Integration)</h3>
-    <p>
-      Diseño de la capa de integración entre ERP y SFA, coordinación de despliegues,
-      pruebas con negocio y estabilización de procesos críticos.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Modernización de Sistemas Legacy</h3>
-    <p>
-      Migración de sistemas con acceso directo a BD hacia arquitectura basada en APIs,
-      Worker Services y separación de responsabilidades.
-    </p>
-  </div>
-</section>
-
-<!-- OPTIMIZATION -->
-<section>
-  <h2 class="section-title">Optimización de Alto Rendimiento</h2>
-
-  <div class="card">
-    <h3>Performance Tuning en SQL Server</h3>
-    <p>
-      He optimizado procedimientos almacenados críticos con tiempos de ejecución superiores a 30 minutos,
-      aplicando técnicas avanzadas de análisis y rediseño de consultas.
-    </p>
-  </div>
-
-  <div class="grid">
-
-    <div class="card">
-      <h3>Análisis de Plan de Ejecución</h3>
-      <p>
-        Revisión detallada de Execution Plans para identificar cuellos de botella,
-        scans innecesarios, key lookups y operaciones costosas, ajustando índices y estructuras de consulta.
-      </p>
-      <div class="tags">
-        <span class="tag">Execution Plan</span>
-        <span class="tag">Query Optimization</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Reescritura de Consultas</h3>
-      <p>
-        Reestructuración de consultas complejas utilizando CTE (WITH SELECT),
-        sustituyendo cursores y ciclos por operaciones basadas en conjuntos (set-based operations).
-      </p>
-      <div class="tags">
-        <span class="tag">CTE (WITH)</span>
-        <span class="tag">Set-Based Queries</span>
-        <span class="tag">JOIN Optimization</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Optimización Física de BD</h3>
-      <p>
-        Implementación de índices estratégicos, optimización de joins y uso de tablas temporales (#temp tables)
-        para segmentar y reducir la carga de procesamiento en consultas de alto volumen.
-      </p>
-      <div class="tags">
-        <span class="tag">Indexes</span>
-        <span class="tag">#Temp Tables</span>
-        <span class="tag">SQL Server Internals</span>
-      </div>
-    </div>
-
-  </div>
+</div>
 </section>
 
 <section>
-  <h2 class="section-title">Agente de Inteligencia Artificial (Mesa de Servicio)</h2>
+<h2 class="section-title">Stack Tecnológico</h2>
 
-  <div class="card">
-    <h3>Plataforma de Automatización y Orquestación Empresarial</h3>
+<div class="grid">
 
-    <p>
-      Desarrollo de un agente de inteligencia artificial en producción orientado a mesa de servicio,
-      diseñado para interpretar lenguaje natural y ejecutar operaciones operativas entre sistemas empresariales.
-    </p>
+<div class="card">
+<h3>Backend</h3>
+<span class="tag">.NET 8</span>
+<span class="tag">ASP.NET Core</span>
+<span class="tag">C#</span>
+<span class="tag">REST APIs</span>
+<span class="tag">Worker Services</span>
+<span class="tag">MediatR</span>
+</div>
 
-    <p>
-      El sistema convierte solicitudes de usuarios en acciones estructuradas, orquestando llamadas a APIs,
-      consultas a bases de datos y validaciones de estado en sistemas críticos.
-    </p>
+<div class="card">
+<h3>Frontend</h3>
+<span class="tag">Vue 3</span>
+<span class="tag">Vuetify</span>
+<span class="tag">JavaScript</span>
+<span class="tag">TypeScript</span>
+</div>
 
-    <div class="tags">
-      <span class="tag">OpenAI</span>
-      <span class="tag">Service Desk</span>
-      <span class="tag">Orquestación</span>
-      <span class="tag">Producción</span>
-    </div>
-  </div>
+<div class="card">
+<h3>Datos</h3>
+<span class="tag">SQL Server</span>
+<span class="tag">Dapper</span>
+<span class="tag">ETL</span>
+<span class="tag">Performance Tuning</span>
+</div>
 
-  <div class="card">
-    <h3>Características Clave</h3>
-    <ul>
-      <li>Interpretación de lenguaje natural (NLP con OpenAI)</li>
-      <li>Orquestación de múltiples sistemas empresariales</li>
-      <li>Ejecución controlada con validaciones y confirmación del usuario</li>
-      <li>Integración con ERP, APIs internas y servicios Windows</li>
-      <li>Operación en entorno productivo con monitoreo continuo</li>
-    </ul>
-  </div>
+<div class="card">
+<h3>Arquitectura & DevOps</h3>
+<span class="tag">Azure DevOps</span>
+<span class="tag">CI/CD</span>
+<span class="tag">YARP</span>
+<span class="tag">Ocelot</span>
+<span class="tag">Azure Artifacts</span>
+</div>
+
+</div>
 </section>
 
-<!-- TIMELINE -->
 <section>
-  <h2 class="section-title">Trayectoria Profesional</h2>
+<h2 class="section-title">Proyectos Estratégicos</h2>
 
-  <div class="timeline">
-    <div class="timeline-item">
-      <h4>Café Soluble S.A. (Actual)</h4>
-      <p>Arquitectura de sistemas, integración ERP, APIs y liderazgo técnico.</p>
-    </div>
+<div class="grid">
 
-    <div class="timeline-item">
-      <h4>JuegaOK S.A.</h4>
-      <p>Desarrollo .NET, optimización SQL Server y APIs empresariales.</p>
-    </div>
+<div class="card">
+<h3>Integración ERP ↔ XSales</h3>
+<p>
+Diseño e implementación de la capa de integración entre ERP y SFA,
+sincronizando clientes, inventarios, pedidos, rutas y procesos comerciales.
+</p>
+</div>
 
-    <div class="timeline-item">
-      <h4>Emprovisa S.A.</h4>
-      <p>Desarrollo de sistemas empresariales y migración de tecnologías.</p>
-    </div>
-  </div>
+<div class="card">
+<h3>Autenticación Centralizada</h3>
+<p>
+Implementación de autenticación centralizada utilizando Active Directory,
+JWT y APIs compartidas para múltiples portales corporativos.
+</p>
+</div>
+
+<div class="card">
+<h3>Modernización de Sistemas Legacy</h3>
+<p>
+Migración de aplicaciones con acceso directo a base de datos hacia arquitecturas
+basadas en APIs y servicios desacoplados.
+</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Optimización de Alto Rendimiento</h2>
+
+<div class="card">
+<h3>Performance Tuning SQL Server</h3>
+<p>
+Optimización de procedimientos almacenados críticos con tiempos de ejecución superiores
+a 30 minutos mediante análisis de planes de ejecución, rediseño de consultas e índices.
+</p>
+</div>
+
+<br>
+
+<div class="grid">
+
+<div class="card">
+<h3>Análisis de Execution Plans</h3>
+<p>
+Identificación de scans innecesarios, key lookups, operadores costosos y cuellos de botella
+para mejorar el rendimiento de consultas complejas.
+</p>
+</div>
+
+<div class="card">
+<h3>Reescritura de Consultas</h3>
+<p>
+Uso de CTE (WITH), operaciones basadas en conjuntos, JOINs optimizados y eliminación
+de cursores para reducir tiempos de procesamiento.
+</p>
+</div>
+
+<div class="card">
+<h3>Optimización Física</h3>
+<p>
+Diseño de índices estratégicos, uso de tablas temporales (#temp tables)
+y segmentación de datos para cargas de alto volumen.
+</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2 class="section-title">DevOps y Automatización</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>CI/CD</h3>
+<p>Construcción de pipelines automatizados para despliegues y validaciones continuas.</p>
+</div>
+
+<div class="card">
+<h3>Self Hosted Agents</h3>
+<p>Configuración y administración de agentes privados para procesos de build y release.</p>
+</div>
+
+<div class="card">
+<h3>Azure Artifacts</h3>
+<p>Publicación y mantenimiento de paquetes NuGet reutilizables entre aplicaciones.</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Agente de Inteligencia Artificial para Mesa de Servicio</h2>
+
+<div class="card">
+<h3>Plataforma de Automatización Operativa</h3>
+
+<p>
+Agente inteligente en producción orientado a mesa de servicio, capaz de interpretar
+lenguaje natural y ejecutar acciones sobre sistemas empresariales.
+</p>
+
+<p>
+Orquesta consultas a ERP, bases de datos, APIs internas y validaciones sobre servidores.
+</p>
+</div>
+
+<br>
+
+<div class="grid">
+
+<div class="card">
+<h3>Consultas ERP</h3>
+<p>
+Consulta de pedidos, estados y procesos empresariales mediante lenguaje natural.
+</p>
+</div>
+
+<div class="card">
+<h3>Monitoreo de Servicios</h3>
+<p>
+Verificación del estado de servicios Windows, interfaces y workers desplegados en servidores.
+</p>
+</div>
+
+<div class="card">
+<h3>Automatización</h3>
+<p>
+Comunicación con APIs para cambios de estado, generación de nuevos días operativos
+y ejecución de procesos empresariales.
+</p>
+</div>
+
+</div>
+
+<br>
+
+<div class="card">
+<h3>Características Técnicas</h3>
+<ul>
+<li>Integración con OpenAI.</li>
+<li>Orquestación de múltiples sistemas empresariales.</li>
+<li>Integración con ERP, APIs y SQL Server.</li>
+<li>Confirmación previa para acciones críticas.</li>
+<li>Operación productiva con monitoreo continuo.</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Liderazgo Técnico</h2>
+
+<div class="card">
+<p>
+Participación en decisiones de arquitectura, coordinación con proveedores,
+planificación de despliegues, validación de soluciones técnicas y acompañamiento
+a áreas de negocio durante implementaciones críticas.
+</p>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Trayectoria Profesional</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h4>Café Soluble S.A. | Actual</h4>
+<p>
+Integración ERP-SFA, APIs empresariales, optimización SQL Server,
+agente IA corporativo y liderazgo técnico.
+</p>
+</div>
+
+<div class="timeline-item">
+<h4>JuegaOK S.A.</h4>
+<p>
+Desarrollo de sistemas .NET, APIs empresariales y optimización SQL Server.
+</p>
+</div>
+
+<div class="timeline-item">
+<h4>Emprovisa S.A.</h4>
+<p>
+Desarrollo de aplicaciones empresariales, integración de sistemas y soporte tecnológico.
+</p>
+</div>
+
+</div>
 </section>
 
 <footer>
-  <p>Francisco Sandoval | Senior .NET Engineer</p>
-  <p>Managua, Nicaragua</p>
+<p>Francisco Sandoval | Senior .NET Engineer</p>
+<p>Managua, Nicaragua</p>
 </footer>
 
 </body>
