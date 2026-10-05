@@ -3,50 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Francisco Sandoval | Senior .NET Engineer</title>
+<title>Francisco Sandoval | Ingeniero .NET Senior</title>
+<meta name="description" content="Ingeniero .NET Senior en Managua, Nicaragua. Agentes de IA en producción, integración ERP, APIs empresariales, optimización de SQL Server y DevOps.">
+<meta name="author" content="Francisco Sandoval">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Francisco Sandoval | Ingeniero .NET Senior · IA aplicada">
+<meta property="og:description" content="Agentes de IA en producción sobre procesos reales de negocio, integración ERP, APIs empresariales y SQL Server.">
+<meta property="og:locale" content="es_NI">
+<!-- TODO: agregar og:image (imagen 1200x630) y og:url cuando el sitio esté publicado -->
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%232563eb'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-weight='700' font-size='28' fill='white'>FS</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
 font-family:'Inter',sans-serif;
 background:#0b1220;
 color:#e5e7eb;
 line-height:1.6
 }
+a{color:inherit}
+a:focus-visible{
+outline:2px solid #60a5fa;
+outline-offset:3px;
+border-radius:6px
+}
+
+/* Navegación */
+.nav{
+position:sticky;
+top:0;
+z-index:10;
+background:rgba(11,18,32,.85);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,.06)
+}
+.nav-inner{
+max-width:1200px;
+margin:auto;
+padding:14px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px
+}
+.nav-brand{
+font-weight:700;
+text-decoration:none;
+white-space:nowrap
+}
+.nav-links{
+display:flex;
+gap:22px;
+list-style:none;
+overflow-x:auto
+}
+.nav-links a{
+text-decoration:none;
+color:#cbd5e1;
+font-size:.9rem;
+white-space:nowrap;
+transition:color .2s
+}
+.nav-links a:hover{color:#60a5fa}
+
+/* Hero */
 .hero{
-min-height:100vh;
+min-height:calc(100vh - 56px);
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:40px;
+padding:40px 20px;
 background:
 radial-gradient(circle at top left,#2563eb33,transparent 35%),
 radial-gradient(circle at bottom right,#0ea5e933,transparent 35%)
 }
-.hero h1{font-size:4rem;font-weight:700}
-.hero h2{color:#60a5fa;margin-top:10px}
-.hero p{max-width:850px;margin:25px auto;color:#cbd5e1}
+.hero h1{font-size:4rem;font-weight:700;line-height:1.15}
+.hero .subtitle{color:#60a5fa;margin-top:12px;font-size:1.25rem;font-weight:600}
+.hero p{max-width:760px;margin:25px auto 0;color:#cbd5e1}
+.location{color:#94a3b8;font-size:.95rem;margin-top:8px}
+.actions{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+justify-content:center;
+margin-top:30px
+}
+
+/* Botones */
 .btn{
 display:inline-block;
 padding:12px 22px;
 border-radius:10px;
 text-decoration:none;
-margin-top:20px;
+font-weight:500;
 background:#2563eb;
-color:white
+color:white;
+border:1px solid #2563eb;
+transition:background .2s,transform .2s
 }
+.btn:hover{background:#1d4ed8;transform:translateY(-2px)}
+.btn-outline{
+background:transparent;
+color:#93c5fd;
+border-color:#334155
+}
+.btn-outline:hover{background:#1e293b}
+
+/* Secciones */
 section{
 max-width:1200px;
 margin:auto;
-padding:80px 20px
+padding:80px 20px;
+scroll-margin-top:60px
 }
 .section-title{
 text-align:center;
 font-size:2rem;
-margin-bottom:40px;
+margin-bottom:12px;
 color:#60a5fa
+}
+.section-lead{
+text-align:center;
+color:#94a3b8;
+max-width:700px;
+margin:0 auto 40px
 }
 .grid{
 display:grid;
@@ -58,342 +145,707 @@ background:rgba(30,41,59,.65);
 border:1px solid rgba(255,255,255,.08);
 padding:24px;
 border-radius:16px;
-backdrop-filter:blur(10px)
+transition:border-color .2s,transform .2s
+}
+.card:hover,.stat:hover{
+border-color:rgba(96,165,250,.4);
+transform:translateY(-3px)
 }
 .card h3{color:#93c5fd;margin-bottom:12px}
+
+/* Resultados */
 .stats{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:20px
 }
 .stat{text-align:center}
-.stat h3{
+.stat .value{
+display:block;
 color:#3b82f6;
-font-size:1.8rem;
+font-size:2.2rem;
+font-weight:700;
+line-height:1.2;
 margin-bottom:10px
 }
+.stat p{color:#cbd5e1}
+
+/* Casos de estudio */
+.cases{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+gap:20px
+}
+.case{display:flex;flex-direction:column}
+.case dl{flex:1}
+.case dt{
+color:#60a5fa;
+font-size:.75rem;
+font-weight:600;
+text-transform:uppercase;
+letter-spacing:.06em;
+margin-top:14px
+}
+.case dd{color:#cbd5e1}
+.case ul{padding-left:20px;color:#cbd5e1}
+.case .tags{margin-top:18px}
+
 .tag{
 display:inline-block;
 padding:6px 12px;
 border-radius:999px;
 background:#1e293b;
-margin:4px;
+margin:4px 4px 0 0;
 font-size:.8rem;
 color:#93c5fd
 }
+
+/* Trayectoria */
 .timeline{
 border-left:2px solid #334155;
-padding-left:20px
+padding-left:24px;
+max-width:850px;
+margin:auto
 }
 .timeline-item{
-margin-bottom:25px
+position:relative;
+margin-bottom:35px
 }
-.timeline-item h4{color:#60a5fa}
-ul{padding-left:20px}
-footer{
+.timeline-item::before{
+content:"";
+position:absolute;
+left:-31px;
+top:7px;
+width:12px;
+height:12px;
+border-radius:50%;
+background:#2563eb;
+border:2px solid #0b1220
+}
+.timeline-item h3{color:#e5e7eb;font-size:1.15rem}
+.timeline-item .role{color:#60a5fa;font-weight:500}
+.timeline-item .dates{color:#94a3b8;font-size:.9rem}
+.timeline-item p{margin-top:8px;color:#cbd5e1}
+.timeline-item ul{margin-top:8px;padding-left:20px;color:#cbd5e1}
+
+.timeline-item a{color:#c4b5fd}
+
+/* Inteligencia Artificial (sección destacada) */
+.nav-links .nav-ai{color:#c4b5fd;font-weight:600}
+.ai-text{
+background:linear-gradient(90deg,#a78bfa,#60a5fa);
+-webkit-background-clip:text;
+background-clip:text;
+color:transparent
+}
+.badge{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:6px 14px;
+margin-bottom:22px;
+border-radius:999px;
+border:1px solid rgba(167,139,250,.4);
+background:rgba(124,58,237,.12);
+color:#c4b5fd;
+font-size:.85rem;
+text-decoration:none;
+transition:background .2s
+}
+.badge:hover{background:rgba(124,58,237,.25)}
+.dot{
+width:8px;
+height:8px;
+border-radius:50%;
+background:#22c55e;
+box-shadow:0 0 0 0 rgba(34,197,94,.6);
+animation:pulse 2s infinite
+}
+@keyframes pulse{
+70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}
+100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
+}
+.btn-ai{
+background:linear-gradient(90deg,#7c3aed,#2563eb);
+border-color:transparent
+}
+.btn-ai:hover{background:linear-gradient(90deg,#6d28d9,#1d4ed8)}
+
+.ai-band{
+background:
+radial-gradient(circle at 15% 20%,#7c3aed26,transparent 40%),
+radial-gradient(circle at 85% 80%,#2563eb26,transparent 40%),
+#0d1426;
+border-top:1px solid rgba(167,139,250,.15);
+border-bottom:1px solid rgba(167,139,250,.15)
+}
+.eyebrow{
 text-align:center;
-padding:40px;
-border-top:1px solid #1f2937;
+color:#a78bfa;
+font-size:.8rem;
+font-weight:600;
+text-transform:uppercase;
+letter-spacing:.1em;
+margin-bottom:8px
+}
+.ai-title{font-size:2.4rem;color:#e5e7eb}
+.ai-layout{
+display:grid;
+grid-template-columns:1.3fr 1fr;
+gap:40px;
+align-items:center;
+margin-bottom:40px
+}
+.video-wrap video,
+.video-wrap iframe{
+display:block;
+width:100%;
+aspect-ratio:16/9;
+border:0;
+border-radius:16px;
+background:#020617;
+box-shadow:0 0 0 1px rgba(167,139,250,.35),0 20px 60px -20px rgba(124,58,237,.5)
+}
+.video-caption{
+color:#94a3b8;
+font-size:.85rem;
+text-align:center;
+margin-top:12px
+}
+.ai-sub{color:#c4b5fd;margin-bottom:16px}
+.flow{
+list-style:none;
+counter-reset:step
+}
+.flow li{
+counter-increment:step;
+position:relative;
+padding-left:44px;
+margin-bottom:16px;
+color:#cbd5e1
+}
+.flow li::before{
+content:counter(step);
+position:absolute;
+left:0;
+top:0;
+width:30px;
+height:30px;
+border-radius:50%;
+display:grid;
+place-items:center;
+font-size:.85rem;
+font-weight:600;
+color:#fff;
+background:linear-gradient(135deg,#7c3aed,#2563eb)
+}
+.flow strong{color:#e5e7eb}
+.ai-grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.ai-card{border-color:rgba(167,139,250,.25)}
+.ai-card:hover{border-color:rgba(167,139,250,.6)}
+.ai-card h3{color:#c4b5fd}
+.ai-tags{text-align:center;margin-top:30px}
+.tag-ai{
+background:rgba(124,58,237,.18);
+color:#c4b5fd
+}
+.ai-dev{margin-top:40px}
+.ai-dev:hover{transform:none}
+.ai-dev > p{color:#cbd5e1;margin-bottom:20px}
+.ai-dev-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.ai-dev-grid h4{color:#e5e7eb;margin-bottom:6px}
+.ai-dev-grid p{color:#94a3b8;font-size:.95rem}
+.stat-ai{border-color:rgba(167,139,250,.35)}
+.stat-ai .value{color:#a78bfa}
+
+/* Formación */
+.edu-grid{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:start}
+.edu-title{font-weight:600;font-size:1.1rem}
+.edu-meta{color:#94a3b8}
+.certs{list-style:none;padding:0}
+.certs li{
+padding:10px 0;
+border-bottom:1px solid rgba(255,255,255,.06);
 color:#94a3b8
 }
+.certs li:last-child{border-bottom:0}
+.certs strong{color:#e5e7eb;font-weight:500}
+.cert-ai strong{color:#c4b5fd}
+
+/* Contacto */
+.contact{text-align:center}
+
+footer{
+text-align:center;
+padding:40px 20px;
+border-top:1px solid #1f2937;
+color:#94a3b8;
+font-size:.9rem
+}
+
 @media(max-width:768px){
 .hero h1{font-size:2.7rem}
-.hero h2{font-size:1.1rem}
+.hero .subtitle{font-size:1.05rem}
+.nav-brand{display:none}
+.cases{grid-template-columns:1fr}
+section{padding:60px 16px}
+.ai-layout{grid-template-columns:1fr;gap:30px}
+.edu-grid{grid-template-columns:1fr}
+.ai-title{font-size:1.8rem}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*{transition:none!important;animation:none!important}
 }
 </style>
 </head>
 <body>
 
-<section class="hero">
+<nav class="nav" aria-label="Navegación principal">
+<div class="nav-inner">
+<a class="nav-brand" href="#inicio">Francisco Sandoval</a>
+<ul class="nav-links">
+<li><a href="#ia" class="nav-ai">Agente IA</a></li>
+<li><a href="#resultados">Resultados</a></li>
+<li><a href="#casos">Casos de estudio</a></li>
+<li><a href="#stack">Stack</a></li>
+<li><a href="#trayectoria">Trayectoria</a></li>
+<li><a href="#formacion">Formación</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+</div>
+</nav>
+
+<header class="hero" id="inicio">
 <div>
+<a class="badge" href="#ia"><span class="dot"></span>Agente de IA en producción desde 2026 · Ver demo</a>
 <h1>Francisco Sandoval</h1>
-<h2>Senior .NET Engineer | Arquitectura de Sistemas | Integración ERP | IA</h2>
+<p class="subtitle">Ingeniero .NET Senior · <span class="ai-text">IA aplicada</span> · Integración ERP · Arquitectura</p>
+<p class="location">Managua, Nicaragua</p>
 
 <p>
-Ingeniero en Sistemas con más de 5 años de experiencia en desarrollo de aplicaciones web,
-integración de sistemas empresariales y optimización de procesos. Especialista en .NET,
-Vue.js, SQL Server y DevOps, con experiencia en diseño de APIs, modernización de sistemas
-legacy e integración con ERP. Participación en liderazgo técnico, coordinación con áreas
-de negocio y construcción de soluciones escalables orientadas al impacto empresarial.
+Ingeniero en Sistemas con más de 5 años de experiencia construyendo aplicaciones web,
+integraciones entre sistemas empresariales y procesos automatizados. Hoy llevo
+<strong>agentes de IA a producción</strong>: asistentes que entienden lenguaje natural y
+operan sobre ERP, bases de datos, APIs y servidores reales, y trabajo a diario con
+Claude Code como asistente de desarrollo. Mi base es .NET, SQL Server y DevOps: diseño
+APIs, modernizo sistemas legacy e integro ERP.
 </p>
 
-<a class="btn" href="https://www.linkedin.com/in/francisco-sandoval-maldonado/" target="_blank">
-LinkedIn
-</a>
+<div class="actions">
+<a class="btn btn-ai" href="#ia">▶ Ver demo del agente</a>
+<a class="btn btn-outline" href="assets/cv/CV FranciscoSandovalEn.pdf" download>Descargar CV</a>
+<a class="btn btn-outline" href="https://www.linkedin.com/in/francisco-sandoval-maldonado/" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+</div>
+</header>
+
+<main>
+
+<div class="ai-band">
+<section id="ia">
+<p class="eyebrow">Proyecto destacado · Inteligencia Artificial</p>
+<h2 class="section-title ai-title">Agente de IA para mesa de servicio</h2>
+<p class="section-lead">
+Construido en .NET/C# con el SDK de OpenAI y en producción desde 2026: un asistente que entiende solicitudes en lenguaje natural y las convierte
+en acciones reales sobre los sistemas de la empresa: ERP, SQL Server, APIs internas y servidores.
+</p>
+
+<div class="ai-layout">
+
+<div class="video-wrap">
+<!-- Video local: colocar en assets/video/ los archivos demo-agente-ia.mp4 y (opcional) demo-poster.jpg -->
+<video controls preload="metadata" playsinline poster="assets/video/demo-poster.jpg">
+<source src="assets/video/demo-agente-ia.mp4" type="video/mp4">
+Tu navegador no soporta video. <a href="assets/video/demo-agente-ia.mp4">Descargar la demo</a>.
+</video>
+<!-- Alternativa con YouTube (no listado): reemplazar el <video> anterior por:
+<iframe src="https://www.youtube-nocookie.com/embed/ID_DEL_VIDEO" title="Demo del agente de IA" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+-->
+<p class="video-caption">Demo: consultas y acciones operativas mediante lenguaje natural.</p>
+</div>
+
+<div>
+<h3 class="ai-sub">Cómo funciona</h3>
+<ol class="flow">
+<li><strong>Solicitud en lenguaje natural.</strong> Desde un portal web interno, el usuario escribe lo que necesita como se lo pediría a una persona.</li>
+<li><strong>Interpretación con OpenAI.</strong> El agente identifica la intención y elige la herramienta adecuada.</li>
+<li><strong>Ejecución sobre sistemas reales.</strong> Consulta el ERP y SQL Server, llama APIs internas o revisa servidores.</li>
+<li><strong>Confirmación para acciones críticas.</strong> Antes de modificar algo, pide aprobación explícita.</li>
+<li><strong>Respuesta clara.</strong> Devuelve el resultado al usuario; la operación se monitorea de forma continua.</li>
+</ol>
+</div>
+
+</div>
+
+<div class="grid ai-grid">
+
+<div class="card ai-card">
+<h3>Consultas al ERP</h3>
+<p>Pedidos, estados y procesos empresariales consultados en lenguaje natural, sin navegar pantallas ni escribir SQL.</p>
+</div>
+
+<div class="card ai-card">
+<h3>Monitoreo de servicios</h3>
+<p>Verificación del estado de servicios Windows, interfaces y workers desplegados en servidores.</p>
+</div>
+
+<div class="card ai-card">
+<h3>Automatización operativa</h3>
+<p>Cambios de estado, apertura de nuevos días operativos y ejecución de procesos a través de APIs.</p>
+</div>
+
+<div class="card ai-card">
+<h3>Ahorro de tiempo</h3>
+<p>Consultas repetitivas que tomaban minutos se resuelven en segundos; el equipo lo usa más de 10 veces al día.</p>
+</div>
+
+<div class="card ai-card">
+<h3>Seguro por diseño</h3>
+<p>Confirmación previa para acciones críticas y operación productiva con monitoreo continuo.</p>
+</div>
+
+</div>
+
+<div class="tags ai-tags">
+<span class="tag tag-ai">OpenAI</span>
+<span class="tag tag-ai">Agentes de IA</span>
+<span class="tag tag-ai">Orquestación de herramientas</span>
+<span class="tag">.NET / C#</span>
+<span class="tag">SQL Server</span>
+<span class="tag">APIs internas</span>
+<span class="tag">Portal web</span>
+<span class="tag">ERP</span>
+</div>
+
+<div class="card ai-card ai-dev">
+<h3>Desarrollo asistido por IA con Claude Code</h3>
+<p>Además de construir soluciones con IA, la uso en mi propio flujo de trabajo. Claude Code es parte de mi día a día para:</p>
+<div class="grid ai-dev-grid">
+<div>
+<h4>Desarrollo diario</h4>
+<p>Escribir, refactorizar y depurar código en .NET, Vue y SQL.</p>
+</div>
+<div>
+<h4>Optimización SQL</h4>
+<p>Análisis de consultas y planes de ejecución para encontrar cuellos de botella.</p>
+</div>
+<div>
+<h4>Revisión y documentación</h4>
+<p>Revisión de código, pruebas y documentación técnica.</p>
+</div>
+</div>
 </div>
 </section>
+</div>
 
-<section>
-<h2 class="section-title">Resultados Destacados</h2>
+<section id="resultados">
+<h2 class="section-title">Resultados destacados</h2>
+<p class="section-lead">Impacto medible en sistemas productivos.</p>
 
 <div class="stats">
 
-<div class="stat">
-<h3>ERP + SFA</h3>
-<p>Integraciones críticas para procesos comerciales y operativos.</p>
+<div class="stat stat-ai">
+<span class="value">+10 usos/día</span>
+<p>Consultas repetitivas de mesa de servicio resueltas por el agente de IA: de minutos a segundos.</p>
 </div>
 
 <div class="stat">
-<h3>SQL Server</h3>
-<p>Optimización avanzada mediante execution plans, índices y performance tuning.</p>
+<span class="value">30+ min → &lt; 5 min</span>
+<p>Reducción del tiempo de ejecución de procedimientos almacenados críticos en SQL Server.</p>
 </div>
 
 <div class="stat">
-<h3>APIs & Workers</h3>
-<p>Automatización y sincronización de procesos empresariales.</p>
+<span class="value">6+</span>
+<p>Procesos sincronizados entre ERP y SFA: clientes, inventarios, pedidos, rutas y más.</p>
 </div>
 
 <div class="stat">
-<h3>IA Productiva</h3>
-<p>Agente inteligente operando sobre procesos reales de negocio.</p>
+<span class="value">6+</span>
+<p>Portales corporativos con autenticación centralizada sobre Active Directory.</p>
 </div>
 
 </div>
 </section>
 
-<section>
-<h2 class="section-title">Stack Tecnológico</h2>
+<section id="casos">
+<h2 class="section-title">Casos de estudio</h2>
+<p class="section-lead">Proyectos estratégicos: el problema, cómo lo resolví y qué se logró.</p>
+
+<div class="cases">
+
+<article class="card case">
+<h3>Integración ERP Infor LN ↔ XSales</h3>
+<dl>
+<dt>Problema</dt>
+<dd>Con la migración de la plataforma de fuerza de ventas XSales a SaaS, clientes, inventarios, pedidos y rutas debían mantenerse consistentes con el ERP Infor LN.</dd>
+<dt>Solución</dt>
+<dd>Diseño e implementación de la capa de integración con APIs, Worker Services y customizaciones sobre Infor LN para la sincronización y automatización de procesos comerciales y operativos.</dd>
+<dt>Resultado</dt>
+<dd>Más de 6 procesos y entidades comerciales sincronizados automáticamente entre ERP y SFA.</dd>
+</dl>
+<div class="tags">
+<span class="tag">Infor LN</span>
+<span class="tag">XSales SaaS</span>
+<span class="tag">ASP.NET Core</span>
+<span class="tag">Worker Services</span>
+<span class="tag">SQL Server</span>
+</div>
+</article>
+
+<article class="card case">
+<h3>Performance tuning en SQL Server</h3>
+<dl>
+<dt>Problema</dt>
+<dd>Procedimientos almacenados críticos con tiempos de ejecución superiores a 30 minutos.</dd>
+<dt>Solución</dt>
+<dd>
+<ul>
+<li>Análisis de planes de ejecución: scans innecesarios, key lookups y operadores costosos.</li>
+<li>Reescritura con CTE, operaciones basadas en conjuntos y eliminación de cursores.</li>
+<li>Índices estratégicos, tablas temporales y segmentación para cargas de alto volumen.</li>
+</ul>
+</dd>
+<dt>Resultado</dt>
+<dd>Ejecución reducida de más de 30 minutos a menos de 5 minutos.</dd>
+</dl>
+<div class="tags">
+<span class="tag">SQL Server</span>
+<span class="tag">Execution Plans</span>
+<span class="tag">Indexación</span>
+</div>
+</article>
+
+<article class="card case">
+<h3>Autenticación centralizada</h3>
+<dl>
+<dt>Problema</dt>
+<dd>Múltiples portales corporativos requerían un mecanismo de acceso unificado.</dd>
+<dt>Solución</dt>
+<dd>Autenticación centralizada con Active Directory, JWT y APIs compartidas consumidas por todos los portales.</dd>
+<dt>Resultado</dt>
+<dd>Más de 6 portales corporativos con un único punto de autenticación.</dd>
+</dl>
+<div class="tags">
+<span class="tag">Active Directory</span>
+<span class="tag">JWT</span>
+<span class="tag">ASP.NET Core</span>
+</div>
+</article>
+
+<article class="card case">
+<h3>Modernización de sistemas legacy y DevOps</h3>
+<dl>
+<dt>Problema</dt>
+<dd>Aplicaciones de escritorio con acceso directo a base de datos y despliegues manuales.</dd>
+<dt>Solución</dt>
+<dd>
+<ul>
+<li>Migración de aplicaciones desktop a web, sobre APIs y servicios desacoplados con gateways YARP/Ocelot.</li>
+<li>Aplicación de Clean Architecture y arquitectura por capas para mejorar la mantenibilidad.</li>
+<li>Pipelines de CI/CD en Azure DevOps con agentes self-hosted para build y release.</li>
+<li>Paquetes NuGet reutilizables publicados en Azure Artifacts.</li>
+</ul>
+</dd></dl>
+<div class="tags">
+<span class="tag">Azure DevOps</span>
+<span class="tag">CI/CD</span>
+<span class="tag">YARP</span>
+<span class="tag">Azure Artifacts</span>
+</div>
+</article>
+
+</div>
+</section>
+
+<section id="stack">
+<h2 class="section-title">Stack tecnológico</h2>
+<p class="section-lead">Tecnologías con las que he construido y mantenido sistemas en producción.</p>
 
 <div class="grid">
 
+<div class="card ai-card">
+<h3>Inteligencia Artificial</h3>
+<span class="tag tag-ai">SDK de OpenAI</span>
+<span class="tag tag-ai">Agentes de IA en .NET</span>
+<span class="tag tag-ai">Orquestación de herramientas</span>
+<span class="tag tag-ai">Lenguaje natural</span>
+<span class="tag tag-ai">Claude Code</span>
+</div>
+
 <div class="card">
-<h3>Backend</h3>
+<h3>Lenguajes y Backend</h3>
+<span class="tag">C#</span>
 <span class="tag">.NET 8</span>
 <span class="tag">ASP.NET Core</span>
-<span class="tag">C#</span>
-<span class="tag">REST APIs</span>
-<span class="tag">Worker Services</span>
+<span class="tag">ASP.NET MVC</span>
+<span class="tag">Razor Pages</span>
+<span class="tag">WebForms</span>
+<span class="tag">T-SQL</span>
 <span class="tag">MediatR</span>
+<span class="tag">ILogger</span>
 </div>
 
 <div class="card">
 <h3>Frontend</h3>
-<span class="tag">Vue 3</span>
+<span class="tag">Vue.js 2/3</span>
 <span class="tag">Vuetify</span>
-<span class="tag">JavaScript</span>
 <span class="tag">TypeScript</span>
+<span class="tag">JavaScript</span>
+<span class="tag">jQuery</span>
+<span class="tag">Bootstrap</span>
+<span class="tag">HTML5</span>
+<span class="tag">CSS3</span>
 </div>
 
 <div class="card">
-<h3>Datos</h3>
+<h3>APIs y Servicios</h3>
+<span class="tag">REST APIs</span>
+<span class="tag">Worker Services</span>
+<span class="tag">Windows Services</span>
+<span class="tag">YARP</span>
+<span class="tag">Ocelot</span>
+<span class="tag">Reverse Proxy</span>
+<span class="tag">JWT</span>
+<span class="tag">Active Directory</span>
+</div>
+
+<div class="card">
+<h3>Datos y Reportes</h3>
 <span class="tag">SQL Server</span>
+<span class="tag">Oracle</span>
+<span class="tag">MySQL</span>
+<span class="tag">Entity Framework Core</span>
 <span class="tag">Dapper</span>
 <span class="tag">ETL</span>
 <span class="tag">Performance Tuning</span>
+<span class="tag">SSRS</span>
+<span class="tag">Jaspersoft</span>
 </div>
 
 <div class="card">
-<h3>Arquitectura & DevOps</h3>
+<h3>Arquitectura y Patrones</h3>
+<span class="tag">Clean Architecture</span>
+<span class="tag">Domain-Driven Design</span>
+<span class="tag">Arquitectura por capas</span>
+<span class="tag">MVC</span>
+<span class="tag">API Gateway</span>
+</div>
+
+<div class="card">
+<h3>DevOps y CI/CD</h3>
+<span class="tag">Git</span>
+<span class="tag">GitHub</span>
 <span class="tag">Azure DevOps</span>
-<span class="tag">CI/CD</span>
-<span class="tag">YARP</span>
-<span class="tag">Ocelot</span>
+<span class="tag">Azure Pipelines</span>
 <span class="tag">Azure Artifacts</span>
+<span class="tag">NuGet</span>
+<span class="tag">Self-Hosted Agents</span>
+<span class="tag">IIS</span>
+</div>
+
+<div class="card">
+<h3>Sistemas empresariales y herramientas</h3>
+<span class="tag">ERP Infor LN</span>
+<span class="tag">SFA XSales</span>
+<span class="tag">Visual Studio</span>
+<span class="tag">VS Code</span>
+<span class="tag">SSMS</span>
+<span class="tag">Postman</span>
+<span class="tag">Swagger</span>
 </div>
 
 </div>
 </section>
 
-<section>
-<h2 class="section-title">Proyectos Estratégicos</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Integración ERP ↔ XSales</h3>
-<p>
-Diseño e implementación de la capa de integración entre ERP y SFA,
-sincronizando clientes, inventarios, pedidos, rutas y procesos comerciales.
-</p>
-</div>
-
-<div class="card">
-<h3>Autenticación Centralizada</h3>
-<p>
-Implementación de autenticación centralizada utilizando Active Directory,
-JWT y APIs compartidas para múltiples portales corporativos.
-</p>
-</div>
-
-<div class="card">
-<h3>Modernización de Sistemas Legacy</h3>
-<p>
-Migración de aplicaciones con acceso directo a base de datos hacia arquitecturas
-basadas en APIs y servicios desacoplados.
-</p>
-</div>
-
-</div>
-</section>
-
-<section>
-<h2 class="section-title">Optimización de Alto Rendimiento</h2>
-
-<div class="card">
-<h3>Performance Tuning SQL Server</h3>
-<p>
-Optimización de procedimientos almacenados críticos con tiempos de ejecución superiores
-a 30 minutos mediante análisis de planes de ejecución, rediseño de consultas e índices.
-</p>
-</div>
-
-<br>
-
-<div class="grid">
-
-<div class="card">
-<h3>Análisis de Execution Plans</h3>
-<p>
-Identificación de scans innecesarios, key lookups, operadores costosos y cuellos de botella
-para mejorar el rendimiento de consultas complejas.
-</p>
-</div>
-
-<div class="card">
-<h3>Reescritura de Consultas</h3>
-<p>
-Uso de CTE (WITH), operaciones basadas en conjuntos, JOINs optimizados y eliminación
-de cursores para reducir tiempos de procesamiento.
-</p>
-</div>
-
-<div class="card">
-<h3>Optimización Física</h3>
-<p>
-Diseño de índices estratégicos, uso de tablas temporales (#temp tables)
-y segmentación de datos para cargas de alto volumen.
-</p>
-</div>
-
-</div>
-</section>
-
-<section>
-<h2 class="section-title">DevOps y Automatización</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>CI/CD</h3>
-<p>Construcción de pipelines automatizados para despliegues y validaciones continuas.</p>
-</div>
-
-<div class="card">
-<h3>Self Hosted Agents</h3>
-<p>Configuración y administración de agentes privados para procesos de build y release.</p>
-</div>
-
-<div class="card">
-<h3>Azure Artifacts</h3>
-<p>Publicación y mantenimiento de paquetes NuGet reutilizables entre aplicaciones.</p>
-</div>
-
-</div>
-</section>
-
-<section>
-<h2 class="section-title">Agente de Inteligencia Artificial para Mesa de Servicio</h2>
-
-<div class="card">
-<h3>Plataforma de Automatización Operativa</h3>
-
-<p>
-Agente inteligente en producción orientado a mesa de servicio, capaz de interpretar
-lenguaje natural y ejecutar acciones sobre sistemas empresariales.
-</p>
-
-<p>
-Orquesta consultas a ERP, bases de datos, APIs internas y validaciones sobre servidores.
-</p>
-</div>
-
-<br>
-
-<div class="grid">
-
-<div class="card">
-<h3>Consultas ERP</h3>
-<p>
-Consulta de pedidos, estados y procesos empresariales mediante lenguaje natural.
-</p>
-</div>
-
-<div class="card">
-<h3>Monitoreo de Servicios</h3>
-<p>
-Verificación del estado de servicios Windows, interfaces y workers desplegados en servidores.
-</p>
-</div>
-
-<div class="card">
-<h3>Automatización</h3>
-<p>
-Comunicación con APIs para cambios de estado, generación de nuevos días operativos
-y ejecución de procesos empresariales.
-</p>
-</div>
-
-</div>
-
-<br>
-
-<div class="card">
-<h3>Características Técnicas</h3>
-<ul>
-<li>Integración con OpenAI.</li>
-<li>Orquestación de múltiples sistemas empresariales.</li>
-<li>Integración con ERP, APIs y SQL Server.</li>
-<li>Confirmación previa para acciones críticas.</li>
-<li>Operación productiva con monitoreo continuo.</li>
-</ul>
-</div>
-</section>
-
-<section>
-<h2 class="section-title">Liderazgo Técnico</h2>
-
-<div class="card">
-<p>
-Participación en decisiones de arquitectura, coordinación con proveedores,
-planificación de despliegues, validación de soluciones técnicas y acompañamiento
-a áreas de negocio durante implementaciones críticas.
-</p>
-</div>
-</section>
-
-<section>
-<h2 class="section-title">Trayectoria Profesional</h2>
+<section id="trayectoria">
+<h2 class="section-title">Trayectoria profesional</h2>
+<p class="section-lead">Más de 5 años en desarrollo e integración de sistemas empresariales.</p>
 
 <div class="timeline">
 
 <div class="timeline-item">
-<h4>Café Soluble S.A. | Actual</h4>
-<p>
-Integración ERP-SFA, APIs empresariales, optimización SQL Server,
-agente IA corporativo y liderazgo técnico.
-</p>
+<h3>Café Soluble S.A.</h3>
+<p class="role">Especialista y Programador de Sistemas</p>
+<p class="dates">2023 – Actualidad</p>
+<ul>
+<li>Diseño y puesta en producción del <a href="#ia">agente de IA para mesa de servicio</a> con el SDK de OpenAI.</li>
+<li>Liderazgo técnico en proyectos de desarrollo e integración de sistemas corporativos: decisiones de arquitectura, coordinación con proveedores y áreas de negocio, y planificación de despliegues.</li>
+<li>Implementación e integración de soluciones con ERP Infor LN y la plataforma SFA XSales, incluida su migración a SaaS.</li>
+<li>Modernización de sistemas legacy y migración de aplicaciones desktop a web, mejorando mantenibilidad, rendimiento y experiencia de usuario.</li>
+<li>Desarrollo y optimización de aplicaciones con .NET, JavaScript, TypeScript, Vue.js y Vuetify.</li>
+<li>Reportes corporativos con SQL Server Reporting Services.</li>
+<li>Paquetes NuGet reutilizables para estandarizar componentes internos; control de versiones y CI/CD en Git y Azure DevOps.</li>
+<li>Desarrollo asistido por IA con Claude Code: programación, optimización SQL, revisión de código y documentación.</li>
+</ul>
 </div>
 
 <div class="timeline-item">
-<h4>JuegaOK S.A.</h4>
-<p>
-Desarrollo de sistemas .NET, APIs empresariales y optimización SQL Server.
-</p>
+<h3>JuegaOK S.A.</h3>
+<p class="role">Ingeniero de Gestión de Clientes</p>
+<p class="dates">2022 – 2023</p>
+<ul>
+<li>Desarrollo de sistemas en C#, ASP.NET MVC, WebForms y Web API.</li>
+<li>Optimización de procesos en SQL Server, mejorando el rendimiento de consultas críticas.</li>
+<li>Implementación de mejoras solicitadas por clientes y soporte a producción.</li>
+</ul>
 </div>
 
 <div class="timeline-item">
-<h4>Emprovisa S.A.</h4>
-<p>
-Desarrollo de aplicaciones empresariales, integración de sistemas y soporte tecnológico.
-</p>
+<h3>Emprovisa S.A.</h3>
+<p class="role">Programador Web</p>
+<p class="dates">2020 – 2022</p>
+<ul>
+<li>Desarrollo de sistemas en C#, Web API, Vue y Vuetify.</li>
+<li>Optimización de procesos en SQL Server y Oracle, mejorando el rendimiento de consultas críticas.</li>
+<li>Implementación de mejoras solicitadas por clientes.</li>
+</ul>
 </div>
 
 </div>
 </section>
 
+<section id="formacion">
+<h2 class="section-title">Formación</h2>
+<p class="section-lead">Base académica y aprendizaje continuo.</p>
+
+<div class="grid edu-grid">
+
+<div class="card">
+<h3>Educación</h3>
+<p class="edu-title">Ingeniería en Sistemas</p>
+<p class="edu-meta">Universidad Nacional de Ingeniería (UNI) · Managua, Nicaragua · 2017 – 2021</p>
+</div>
+
+<div class="card">
+<h3>Certificaciones</h3>
+<ul class="certs">
+<li class="cert-ai"><strong>Inteligencia Artificial y Desarrollo de Agentes en .NET</strong> · Udemy</li>
+<li><strong>Clean Architecture y DDD en ASP.NET Core 8</strong> · Udemy</li>
+<li><strong>Ruta de Desarrollo de Aplicaciones .NET</strong> · Platzi</li>
+<li><strong>Desarrollo de Sistemas Web con ASP.NET Core, SQL Server y Vue.js</strong> · Udemy</li>
+<li><strong>Backend con C# y .NET</strong> · Platzi</li>
+<li><strong>Git y Control de Versiones</strong> · Udemy</li>
+<li><strong>Vue.js</strong> · Udemy</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section id="contacto" class="contact">
+<h2 class="section-title">Contacto</h2>
+<p class="section-lead">¿Tienes un proyecto o una vacante? Conversemos.</p>
+<div class="actions">
+<a class="btn" href="assets/cv/CV FranciscoSandovalEn.pdf" download>Descargar CV</a>
+<a class="btn btn-outline" href="https://www.linkedin.com/in/francisco-sandoval-maldonado/" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+</section>
+
+</main>
+
 <footer>
-<p>Francisco Sandoval | Senior .NET Engineer</p>
-<p>Managua, Nicaragua</p>
+<p>© 2026 Francisco Sandoval · Ingeniero .NET Senior · Managua, Nicaragua</p>
 </footer>
 
 </body>
